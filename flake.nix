@@ -9,6 +9,7 @@
         packages = with pkgs; [
             nodePackages.npm
             nodejs
+            asciinema
         ];
 
         shellHook = ''
