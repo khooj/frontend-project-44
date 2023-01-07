@@ -3,7 +3,8 @@
 import { gameLogic, compareToNumber } from '../src/logic.js';
 
 const gcd = (a, b) => {
-	const { max, min } = a > b ? { a, b } : { b, a };
+	const asd = a > b ? { max: a, min: b } : { max: b, min: a };
+	const { max, min } = asd;
 	for (let i = max; i >= min; i--) {
 		if (a % i === 0 && b % i === 0) {
 			return i;
@@ -27,7 +28,7 @@ const game = () => {
 			} while (result === -1);
 			return `${a} ${b}`;
 		},
-		compareToNumber,
+		(ans) => compareToNumber(ans, result),
 	);
 };
 

@@ -22,7 +22,7 @@ export const gameLogic = (greeting, generateQuestion, checkAnswer) => {
 	console.log(`Congratulations, ${name}!`);
 };
 
-export const compareToNumber = (ans) => {
+export const compareToNumber = (ans, result) => {
 	const num = Number(ans);
 	const correct = num == result;
 	const otherwise = result;

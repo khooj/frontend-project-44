@@ -13,7 +13,7 @@ const generate = () => {
 		first += step;
 	}
 
-	return { idx, arr };
+	return { i: idx, arr };
 };
 
 const game = () => {
@@ -23,14 +23,14 @@ const game = () => {
 	gameLogic(
 		`What number is missing in the progression?`,
 		() => {
-			const { o, arr } = generate();
-			idx = o;
+			const { i, arr } = generate();
+			idx = i;
 			result = arr[idx];
 			arr[idx] = '..';
 
 			return arr.join(' ');
 		},
-		compareToNumber,
+		(ans) => compareToNumber(ans, result),
 	);
 };
 

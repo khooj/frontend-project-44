@@ -2,7 +2,7 @@
 
 import { compareToNumber, gameLogic } from '../src/logic.js';
 
-const generateOp = () => {
+const generateOp = (a, b) => {
 	let op;
 	let result;
 	switch (Math.floor(Math.random() * 3)) {
@@ -32,11 +32,12 @@ const game = () => {
 		() => {
 			a = Math.floor(Math.random() * 30);
 			b = Math.floor(Math.random() * 30);
-			const k = generateOp();
-			op, result = k.op, k.result;
+			const k = generateOp(a, b);
+			op = k.op;
+			result = k.result;
 			return `${a} ${op} ${b}`;
 		},
-		compareToNumber,
+		(ans) => compareToNumber(ans, result),
 	);
 };
 
