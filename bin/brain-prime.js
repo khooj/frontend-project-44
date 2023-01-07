@@ -18,7 +18,7 @@ const game = () => {
   gameLogic(
     'Answer "yes" if given number is prime. Otherwise answer "no".',
     () => {
-      a = Math.floor(Math.random() * 100);
+      a = Math.floor(Math.random() * 100 + 1);
       result = isPrime(a);
 
       return a;
