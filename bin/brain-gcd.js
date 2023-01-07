@@ -3,8 +3,7 @@
 import { gameLogic } from '../src/logic.js';
 
 const gcd = (a, b) => {
-	const max = a > b ? a : b;
-	const min = a > b ? b : a;
+	const { max, min } = a > b ? { a, b } : { b, a };
 	for (let i = max; i >= min; i--) {
 		if (a % i === 0 && b % i === 0) {
 			return i;

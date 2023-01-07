@@ -2,24 +2,29 @@
 
 import { gameLogic } from '../src/logic.js';
 
+const generate = () => {
+	const len = Math.floor(Math.random() * 5 + 5);
+	const idx = Math.floor(Math.random() * len);
+	let first = Math.floor(Math.random() * 10 + 1);
+	const step = Math.floor(Math.random() * 5 + 1);
+	const arr = [];
+	for (let i = 0; i < len; i++) {
+		arr.push(first);
+		first += step;
+	}
+
+	return { idx, arr };
+};
+
 const game = () => {
 	let idx = 0;
-	let b = 0;
 	let result = 0;
 
 	gameLogic(
 		`What number is missing in the progression?`,
 		() => {
-			const len = Math.floor(Math.random() * 5 + 5);
-			idx = Math.floor(Math.random() * len);
-			let first = Math.floor(Math.random() * 10 + 1);
-			const step = Math.floor(Math.random() * 5 + 1);
-			const arr = [];
-			for (let i = 0; i < len; i++) {
-				arr.push(first);
-				first += step;
-			}
-
+			const { o, arr } = generate();
+			idx = o;
 			result = arr[idx];
 			arr[idx] = '..';
 
