@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { gameLogic } from '../src/logic.js';
+import { compareToNumber, gameLogic } from '../src/logic.js';
 
 const generate = () => {
 	const len = Math.floor(Math.random() * 5 + 5);
@@ -30,15 +30,7 @@ const game = () => {
 
 			return arr.join(' ');
 		},
-		(ans) => {
-			const num = Number(ans);
-			const correct = num == result;
-			const otherwise = result;
-			return {
-				good: correct,
-				otherwise: otherwise,
-			}
-		}
+		compareToNumber,
 	);
 };
 

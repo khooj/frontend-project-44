@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { gameLogic } from '../src/logic.js';
+import { gameLogic, compareToNumber } from '../src/logic.js';
 
 const gcd = (a, b) => {
 	const { max, min } = a > b ? { a, b } : { b, a };
@@ -27,15 +27,7 @@ const game = () => {
 			} while (result === -1);
 			return `${a} ${b}`;
 		},
-		(ans) => {
-			const num = Number(ans);
-			const correct = num == result;
-			const otherwise = result;
-			return {
-				good: correct,
-				otherwise: otherwise,
-			}
-		}
+		compareToNumber,
 	);
 };
 
