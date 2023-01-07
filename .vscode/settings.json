@@ -1,0 +1,7 @@
+{
+	"[javascript]": {
+		"editor.maxTokenizationLineLength": 2500,
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+	}
+}
